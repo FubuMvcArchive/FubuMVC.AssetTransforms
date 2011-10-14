@@ -1,5 +1,6 @@
 ﻿using FubuMVC.Core;
 using FubuMVC.Core.Assets.Content;
+using dotless.Core;
 
 namespace FubuMVC.Less
 {
@@ -12,6 +13,7 @@ namespace FubuMVC.Less
 
             registry.Services(s =>
             {
+                s.SetServiceIfNone<ILessEngine, LessEngine>();
                 s.AddService<ITransformerPolicy>(lessPolicy);
             });
         }
