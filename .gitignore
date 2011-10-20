@@ -50,5 +50,5 @@ packaging/release
 output
 output/*
 
-!src/packages
-!repositories.config
+src/packages
+repositories.config
