@@ -62,7 +62,7 @@ task :clean do
 end
 
 desc "Compiles the libraries"
-task :compile => [:clean, :version] do
+task :compile => [:restore_if_missing, :clean, :version] do
   MSBuildRunner.compile :compilemode => COMPILE_TARGET, :solutionfile => 'src/FubuMVC.AssetTransforms.sln', :clrversion => CLR_TOOLS_VERSION
 end
 
