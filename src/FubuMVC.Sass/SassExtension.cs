@@ -1,14 +1,18 @@
-﻿using FubuMVC.Core;
+﻿using System.Collections.Generic;
+using FubuMVC.Core;
 using FubuMVC.Core.Assets.Content;
+using FubuMVC.Core.Runtime;
 
 namespace FubuMVC.Sass
 {
     public class SassExtension : IFubuRegistryExtension
     {
+        private readonly string[] _extensions = new[] {".sass", ".scss"};
+
         public void Configure(FubuRegistry registry)
         {
-            var sassPolicy = JavascriptTransformerPolicy<SassTransformer>
-                .For(ActionType.Transformation, ".sass", ".scss");
+            _extensions.Each(MimeType.Css.AddExtension);
+            var sassPolicy = new CssTransformerPolicy<SassTransformer>(ActionType.BatchedTransformation, _extensions);
 
             registry.Services(s =>
             {
