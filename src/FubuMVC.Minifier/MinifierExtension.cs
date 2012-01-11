@@ -11,7 +11,11 @@ namespace FubuMVC.Minifier
             var minifierPolicy = JavascriptTransformerPolicy<MinifierTransformer>
                 .For(ActionType.Transformation, MimeType.Javascript.DefaultExtension());
 
-            registry.Services(s => s.AddService<ITransformerPolicy>(minifierPolicy));
+            registry.Services(s =>
+            {
+                s.AddService<ITransformerPolicy>(minifierPolicy);
+                s.SetServiceIfNone<IMinifier>(new UglifyMinifier());
+            });
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using CoffeeSharp;
 using FubuTestingSupport;
 using NUnit.Framework;
+using SassAndCoffee.Core;
+using SassAndCoffee.JavaScript;
 using SassAndCoffee.JavaScript.CoffeeScript;
 
 namespace FubuMVC.Coffee.Tests
@@ -18,8 +20,8 @@ namespace FubuMVC.Coffee.Tests
         [Test]
         public void meepmeep()
         {
-//            var compiler = new CoffeeScriptCompiler()
-//            Assert.Pass(compiler.Compile("smoke = (x) -> x * x"));
+            var compiler = new CoffeeScriptCompiler(new InstanceProvider<IJavaScriptRuntime>(() => new IEJavaScriptRuntime()));
+            Assert.Pass(compiler.Compile("smoke = (x) -> x * x"));
         }
     }
 }

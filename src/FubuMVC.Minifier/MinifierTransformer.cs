@@ -6,11 +6,15 @@ namespace FubuMVC.Minifier
 {
     public class MinifierTransformer : ITransformer
     {
-        public MinifierTransformer() {}
+        private readonly IMinifier _minifier;
+        public MinifierTransformer(IMinifier minifier)
+        {
+            _minifier = minifier;
+        }
 
         public string Transform(string contents, IEnumerable<AssetFile> files)
         {
-            return contents;
+            return _minifier.Minify(contents);
         }
     }
 }
