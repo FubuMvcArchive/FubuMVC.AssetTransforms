@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Coffee", "FubuMVC.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Less", "FubuMVC.Less\FubuMVC.Less.csproj", "{13189964-4213-48B6-9697-473BF1B73CBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Minifier", "FubuMVC.Minifier\FubuMVC.Minifier.csproj", "{B7B5C38B-9507-4DB7-ACA8-D2AAE23BFEDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{13189964-4213-48B6-9697-473BF1B73CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{13189964-4213-48B6-9697-473BF1B73CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{13189964-4213-48B6-9697-473BF1B73CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B7B5C38B-9507-4DB7-ACA8-D2AAE23BFEDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B7B5C38B-9507-4DB7-ACA8-D2AAE23BFEDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B7B5C38B-9507-4DB7-ACA8-D2AAE23BFEDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B7B5C38B-9507-4DB7-ACA8-D2AAE23BFEDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
