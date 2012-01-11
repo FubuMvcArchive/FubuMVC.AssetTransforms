@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using FubuMVC.Core;
+﻿using FubuMVC.Core;
+using FubuMVC.Core.Assets.Content;
+using FubuMVC.Core.Runtime;
 
 namespace FubuMVC.Minifier
 {
@@ -10,6 +8,10 @@ namespace FubuMVC.Minifier
     {
         public void Configure(FubuRegistry registry)
         {
+            var minifierPolicy = JavascriptTransformerPolicy<MinifierTransformer>
+                .For(ActionType.Transformation, MimeType.Javascript.DefaultExtension());
+
+            registry.Services(s => s.AddService<ITransformerPolicy>(minifierPolicy));
         }
     }
 }

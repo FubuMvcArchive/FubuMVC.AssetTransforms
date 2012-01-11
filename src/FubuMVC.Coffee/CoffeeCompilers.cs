@@ -1,5 +1,5 @@
 using CoffeeSharp;
-using SassAndCoffee.Core.Compilers;
+using SassAndCoffee.JavaScript.CoffeeScript;
 
 namespace FubuMVC.Coffee
 {
