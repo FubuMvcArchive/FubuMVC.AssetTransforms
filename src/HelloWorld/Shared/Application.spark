@@ -1,0 +1,11 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<Styles/>
+    <title>Hello Assets</title>
+</head>
+<body>
+<use:view/>
+<Scripts/>
+</body>
+</html>

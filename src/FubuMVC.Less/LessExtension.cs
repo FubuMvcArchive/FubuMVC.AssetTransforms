@@ -17,7 +17,8 @@ namespace FubuMVC.Less
 
             registry.Services(s =>
             {
-                s.SetServiceIfNone<ILessEngine, LessEngine>();
+                s.SetServiceIfNone<ILessEngine>(new LessEngine());
+                s.SetServiceIfNone<ILessCompiler, LessCompiler>();
                 s.AddService<ITransformerPolicy>(lessPolicy);
             });
         }

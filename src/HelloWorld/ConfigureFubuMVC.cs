@@ -1,5 +1,7 @@
 using FubuMVC.Core;
+using FubuMVC.Less;
 using FubuMVC.Spark;
+using HelloWorld.Home;
 
 namespace HelloWorld
 {
@@ -9,12 +11,20 @@ namespace HelloWorld
         {
             IncludeDiagnostics(true);
 
-            Actions.IncludeClassesSuffixedWithController();
+            Applies
+                .ToThisAssembly();
+
+            Actions
+                .IncludeClassesSuffixedWithController();
 
             Routes
+                .HomeIs<HomeIn>()
                 .IgnoreControllerNamesEntirely()
-                .IgnoreMethodSuffix("Html")
+                .IgnoreControllerFolderName()
                 .RootAtAssemblyNamespace();
+
+            Import<LessExtension>();
+            Assets.CombineAllUniqueAssetRequests();
 
             this.UseSpark();
             Views.TryToAttachWithDefaultConventions();

@@ -1,0 +1,6 @@
+﻿<use namespace="HelloWorld.Less" />
+<viewdata model="HelloWorld.Less.LessOut" />
+<Stylesheet href="less"/>
+<div>
+Less is more
+</div>

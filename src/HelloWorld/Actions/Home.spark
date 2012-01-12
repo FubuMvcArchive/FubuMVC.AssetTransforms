@@ -1,0 +1,9 @@
+﻿<use namespace="HelloWorld.Home" />
+<viewdata model="HelloWorld.Home.HomeOutput" />
+<div>
+  <ul>
+    <li each="var link in Model.Links">
+      <a href="${link.Url}">${link.Text}</a>
+    </li>
+  </ul>
+</div>
