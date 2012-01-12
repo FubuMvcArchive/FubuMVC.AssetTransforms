@@ -1,5 +1,6 @@
 using FubuMVC.Core;
 using FubuMVC.Less;
+using FubuMVC.Sass;
 using FubuMVC.Spark;
 using HelloWorld.Home;
 
@@ -24,6 +25,7 @@ namespace HelloWorld
                 .RootAtAssemblyNamespace();
 
             Import<LessExtension>();
+            Import<SassExtension>();
             Assets.CombineAllUniqueAssetRequests();
 
             this.UseSpark();

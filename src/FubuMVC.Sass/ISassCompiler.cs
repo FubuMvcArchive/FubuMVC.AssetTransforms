@@ -1,4 +1,4 @@
-using System;
+using System.IO;
 
 namespace FubuMVC.Sass
 {
@@ -7,18 +7,20 @@ namespace FubuMVC.Sass
         string Compile(string content);
     }
 
-    public class SassCompiler : ISassCompiler
+    public class DefaultSassCompiler : ISassCompiler
     {
+        readonly SassAndCoffee.Ruby.Sass.ISassCompiler _compiler;
+
+        public DefaultSassCompiler(SassAndCoffee.Ruby.Sass.ISassCompiler compiler)
+        {
+            _compiler = compiler;
+        }
+
         public string Compile(string content)
         {
-            /* Look closer at that goofy:             
-             *  public void Init(ICompilerHost host)
-             */
-
-            //var compiler = new SassFileCompiler();
-            //return compiler.ProcessFileContent(content);
-
-            throw new NotImplementedException();
+            var fileName = Path.GetTempFileName();
+            File.WriteAllText(fileName, content);
+            return _compiler.Compile(fileName, false, null);
         }
     }
 }

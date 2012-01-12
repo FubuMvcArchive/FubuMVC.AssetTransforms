@@ -1,0 +1,6 @@
+﻿<use namespace="HelloWorld.Sass" />
+<viewdata model="HelloWorld.Sass.SassOut" />
+<Stylesheet href="sass"/>
+<div>
+Sass
+</div>

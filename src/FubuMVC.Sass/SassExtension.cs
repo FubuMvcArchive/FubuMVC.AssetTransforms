@@ -7,7 +7,7 @@ namespace FubuMVC.Sass
 {
     public class SassExtension : IFubuRegistryExtension
     {
-        private readonly string[] _extensions = new[] {".sass", ".scss"};
+        private readonly string[] _extensions = new[] { ".sass", ".scss" };
 
         public void Configure(FubuRegistry registry)
         {
@@ -16,6 +16,8 @@ namespace FubuMVC.Sass
 
             registry.Services(s =>
             {
+                s.SetServiceIfNone<ISassCompiler, DefaultSassCompiler>();
+                s.SetServiceIfNone<SassAndCoffee.Ruby.Sass.ISassCompiler, SassAndCoffee.Ruby.Sass.SassCompiler>();
                 s.AddService<ITransformerPolicy>(sassPolicy);
             });
         }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using FubuMVC.Core.Urls;
 using HelloWorld.Less;
+using HelloWorld.Sass;
 
 namespace HelloWorld.Home
 {
@@ -16,14 +17,15 @@ namespace HelloWorld.Home
         {
             var links = new List<Link>
             {
-                new Link { Url = _urls.UrlFor<LessIn>(), Text = "Less" }
+                new Link { Url = _urls.UrlFor<LessIn>(), Text = "Less" },
+                new Link { Url = _urls.UrlFor<SassIn>(), Text = "Sass" }
             };
-            
+
             return new HomeOutput { Links = links };
         }
     }
 
-    public class HomeIn {}
+    public class HomeIn { }
     public class HomeOutput
     {
         public IEnumerable<Link> Links { get; set; }
