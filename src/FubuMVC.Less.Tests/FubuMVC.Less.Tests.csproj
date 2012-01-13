@@ -34,6 +34,7 @@
     <Reference Include="Bottles">
       <HintPath>..\packages\Bottles.0.9.1.176\lib\Bottles.dll</HintPath>
     </Reference>
+    <Reference Include="dotless.Core, Version=1.2.1.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL" />
     <Reference Include="FubuCore">
       <HintPath>..\packages\FubuCore.0.9.4.107\lib\FubuCore.dll</HintPath>
     </Reference>
@@ -85,6 +86,8 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="DefaultServicesTester.cs" />
+    <Compile Include="LessTransformerPolicyTester.cs" />
     <Compile Include="LessTransformerTester.cs" />
   </ItemGroup>
   <ItemGroup>

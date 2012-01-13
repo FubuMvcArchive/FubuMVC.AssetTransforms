@@ -8,14 +8,11 @@ namespace FubuMVC.Less
     {
         public void Configure(FubuRegistry registry)
         {
-            var lessPolicy = 
-                new CssTransformerPolicy<LessTransformer>(ActionType.BatchedTransformation, ".less");
-
             registry.Services(s =>
             {
                 s.SetServiceIfNone<ILessEngine>(new LessEngine());
                 s.SetServiceIfNone<ILessCompiler, LessCompiler>();
-                s.AddService<ITransformerPolicy>(lessPolicy);
+                s.AddService<ITransformerPolicy, LessTransformerPolicy>();
             });
         }
     }

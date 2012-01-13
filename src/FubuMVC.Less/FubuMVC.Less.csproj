@@ -73,6 +73,7 @@
     <Compile Include="ILessCompiler.cs" />
     <Compile Include="LessExtension.cs" />
     <Compile Include="LessTransformer.cs" />
+    <Compile Include="LessTransformerPolicy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".package-manifest" />
