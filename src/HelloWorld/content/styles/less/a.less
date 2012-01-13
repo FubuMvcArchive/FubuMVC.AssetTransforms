@@ -1,4 +1,17 @@
-﻿.a 
+﻿@color-bg: #232323;
+@color-front: #ffffff;
+@img-url: "url('../images/less/{0}')";
+
+/* Utils */
+
+
+.img(@image: image, @horizontal: left, @vertical: top, @repeat: no-repeat, @color: transparent)
 {
-	height: 10px;
+	background: @color formatString(@img-url, @image) @repeat @horizontal @vertical;
+}
+
+.rounded_corners(@radius: 5px) {
+  -moz-border-radius: @radius;
+  -webkit-border-radius: @radius;
+  border-radius: @radius;
 }

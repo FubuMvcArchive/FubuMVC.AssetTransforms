@@ -117,6 +117,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="content\images\less\logo.png" />
     <Content Include="content\styles\css\a.css" />
     <None Include="Actions\Sass.spark" />
     <None Include="Actions\Home.spark" />
@@ -156,6 +157,10 @@
     <None Include="content\styles\less\c.less" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FubuMVC.Coffee\FubuMVC.Coffee.csproj">
+      <Project>{A2F4FD05-BDA6-4B8E-9EE7-70683EEE8B38}</Project>
+      <Name>FubuMVC.Coffee</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FubuMVC.Less\FubuMVC.Less.csproj">
       <Project>{13189964-4213-48B6-9697-473BF1B73CBD}</Project>
       <Name>FubuMVC.Less</Name>

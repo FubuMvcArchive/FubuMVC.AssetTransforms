@@ -1,4 +1,29 @@
-﻿.b 
-{
-	height: 8px;
+﻿body {
+    background-color: @color-bg;
+}
+
+.content {
+
+	min-height:600px;
+	margin: 6px;
+}
+
+div.less {
+
+	.img('logo.png', 95%);
+
+	border: @color-front solid 1px;
+	.rounded_corners();
+
+	position:relative;
+	top:5px;
+	height:84px;
+
+	padding:5px;
+	margin: 5px;
+
+	color: @color-front;
+	font-size:60px;
+    font-family: fantasy;
+    font-style: italic;
 }
