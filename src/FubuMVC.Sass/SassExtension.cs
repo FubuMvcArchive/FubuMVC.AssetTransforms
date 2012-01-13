@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using FubuMVC.Core;
+﻿using FubuMVC.Core;
 using FubuMVC.Core.Assets.Content;
-using FubuMVC.Core.Runtime;
 
 namespace FubuMVC.Sass
 {
@@ -11,8 +9,8 @@ namespace FubuMVC.Sass
 
         public void Configure(FubuRegistry registry)
         {
-            _extensions.Each(MimeType.Css.AddExtension);
-            var sassPolicy = new CssTransformerPolicy<SassTransformer>(ActionType.BatchedTransformation, _extensions);
+            var sassPolicy = 
+                new CssTransformerPolicy<SassTransformer>(ActionType.BatchedTransformation, _extensions);
 
             registry.Services(s =>
             {
