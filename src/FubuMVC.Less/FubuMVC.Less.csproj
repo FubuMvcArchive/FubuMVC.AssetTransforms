@@ -70,7 +70,7 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="ILessCompiler.cs" />
+    <Compile Include="LessCompiler.cs" />
     <Compile Include="LessExtension.cs" />
     <Compile Include="LessTransformer.cs" />
     <Compile Include="LessTransformerPolicy.cs" />

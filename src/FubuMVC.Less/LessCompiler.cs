@@ -2,7 +2,6 @@ using dotless.Core;
 
 namespace FubuMVC.Less
 {
-    // Change later to deal with file vs string.
     public interface ILessCompiler
     {
         string Compile(string less);

@@ -8,6 +8,7 @@ using dotless.Core;
 
 namespace FubuMVC.Less.Tests
 {
+    [TestFixture]
     public class DefaultServicesTester : InteractionContext<LessExtension>
     {
         private IServiceRegistry _services;

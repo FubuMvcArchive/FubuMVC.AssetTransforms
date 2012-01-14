@@ -6,6 +6,7 @@ using Rhino.Mocks;
 
 namespace FubuMVC.Less.Tests
 {
+    [TestFixture]
     public class LessTransformerTester : InteractionContext<LessTransformer>
     {
         [Test]

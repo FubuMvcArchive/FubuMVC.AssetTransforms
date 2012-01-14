@@ -5,6 +5,7 @@ using NUnit.Framework;
 
 namespace FubuMVC.Less.Tests
 {
+    [TestFixture]
     public class LessTransformerPolicyTester : InteractionContext<LessTransformerPolicy>
     {
         [Test]
@@ -14,7 +15,7 @@ namespace FubuMVC.Less.Tests
         }
 
         [Test]
-        public void applies_to_negative_on_all()
+        public void applies_to_negative_on_css()
         {
             ClassUnderTest.AppliesTo(new AssetFile("base.css")).ShouldBeFalse();
         }
