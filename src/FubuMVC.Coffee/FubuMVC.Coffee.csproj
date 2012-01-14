@@ -74,9 +74,11 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="CoffeeExtension.cs" />
+    <Compile Include="Compilers\CoffeeSharpCompiler.cs" />
     <Compile Include="CoffeeTransformer.cs" />
-    <Compile Include="CoffeeCompilers.cs" />
-    <Compile Include="ICoffeeCompiler.cs" />
+    <Compile Include="Compilers\SassCoffeeCompiler.cs" />
+    <Compile Include="CoffeeTransformerPolicy.cs" />
+    <Compile Include="Compilers\ICoffeeCompiler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".package-manifest" />

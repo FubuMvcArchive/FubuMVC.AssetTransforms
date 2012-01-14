@@ -1,5 +1,7 @@
-﻿using FubuMVC.Core;
+﻿using FubuMVC.Coffee.Compilers;
+using FubuMVC.Core;
 using FubuMVC.Core.Assets.Content;
+using FubuMVC.Core.Registration;
 
 namespace FubuMVC.Coffee
 {
@@ -7,18 +9,15 @@ namespace FubuMVC.Coffee
     {
         /* DSL for basic options: bare, globals and what impl of ICoffeeCompiler to use */
 
-        // Temporary
-
         public void Configure(FubuRegistry registry)
         {
-            var coffeePolicy = JavascriptTransformerPolicy<CoffeeTransformer>
-                .For(ActionType.BatchedTransformation, ".coffee");
-            
-            registry.Services(s =>
-            {
-                s.SetServiceIfNone<ICoffeeCompiler, CoffeeSharpEngine>();
-                s.AddService<ITransformerPolicy>(coffeePolicy);
-            });
+            registry.Services(services);
+        }
+
+        private static void services(IServiceRegistry s)
+        {
+            s.SetServiceIfNone<ICoffeeCompiler, CoffeeSharpCompiler>();
+            s.AddService<ITransformerPolicy, CoffeeTransformerPolicy>();
         }
     }
 }

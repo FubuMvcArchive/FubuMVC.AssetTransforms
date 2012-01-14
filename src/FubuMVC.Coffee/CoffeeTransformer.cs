@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using FubuMVC.Coffee.Compilers;
 using FubuMVC.Core.Assets.Content;
 using FubuMVC.Core.Assets.Files;
 

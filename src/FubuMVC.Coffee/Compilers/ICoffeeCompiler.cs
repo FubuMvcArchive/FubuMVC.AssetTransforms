@@ -1,6 +1,5 @@
-namespace FubuMVC.Coffee
+namespace FubuMVC.Coffee.Compilers
 {
-    // Add Result and Request types
     public interface ICoffeeCompiler
     {
         string Compile(string code);
