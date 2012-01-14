@@ -1,25 +1,19 @@
-﻿using FubuTestingSupport;
+﻿using System.Linq;
+using FubuMVC.Core.Assets.Files;
+using FubuTestingSupport;
 using NUnit.Framework;
+using Rhino.Mocks;
 
 namespace FubuMVC.Sass.Tests
 {
     [TestFixture]
     public class SassTransformerTester : InteractionContext<SassTransformer>
     {
-        protected override void beforeEach()
-        {
-            var sassCompiler = new SassAndCoffee.Ruby.Sass.SassCompiler();
-            Services.Inject(typeof(ISassCompiler), new DefaultSassCompiler(sassCompiler));
-        }
-
         [Test]
-        public void should_compile()
+        public void should_use_the_provided_compiler()
         {
-            const string expected = "body {\n  color: blue; }\n";
-            const string contents = "@mixin mine { color: blue } body { @include mine }";
-
-            ClassUnderTest.Transform(contents, null)
-                .ShouldEqual(expected);
+            ClassUnderTest.Transform(".sass{}", Enumerable.Empty<AssetFile>());
+            MockFor<ISassCompiler>().AssertWasCalled(x => x.Compile(".sass{}"));
         }
     }
 }

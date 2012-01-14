@@ -91,6 +91,7 @@
     <Compile Include="ISassCompiler.cs" />
     <Compile Include="SassExtension.cs" />
     <Compile Include="SassTransformer.cs" />
+    <Compile Include="SassTransformerPolicy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".package-manifest" />

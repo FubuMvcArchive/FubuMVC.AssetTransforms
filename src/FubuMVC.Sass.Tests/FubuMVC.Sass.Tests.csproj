@@ -109,6 +109,9 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="DefaultSassCompilerTester.cs" />
+    <Compile Include="DefaultServicesTester.cs" />
+    <Compile Include="SassTransformerPolicyTester.cs" />
     <Compile Include="SassTransformerTester.cs" />
   </ItemGroup>
   <ItemGroup>
