@@ -34,7 +34,10 @@
     <Reference Include="Bottles">
       <HintPath>..\packages\Bottles.0.9.1.179\lib\Bottles.dll</HintPath>
     </Reference>
-    <Reference Include="dotless.Core, Version=1.2.1.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL" />
+    <Reference Include="dotless.Core, Version=1.2.2.0, Culture=neutral, PublicKeyToken=96b446c9e63eae34, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\dotless.1.2.2.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\packages\FubuCore.0.9.4.109\lib\FubuCore.dll</HintPath>
     </Reference>

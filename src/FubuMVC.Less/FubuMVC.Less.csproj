@@ -35,7 +35,7 @@
       <HintPath>..\packages\Bottles.0.9.1.179\lib\Bottles.dll</HintPath>
     </Reference>
     <Reference Include="dotless.Core">
-      <HintPath>..\packages\dotless.1.2.1.0\lib\dotless.Core.dll</HintPath>
+      <HintPath>..\packages\dotless.1.2.2.0\lib\dotless.Core.dll</HintPath>
     </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\packages\FubuCore.0.9.4.109\lib\FubuCore.dll</HintPath>
