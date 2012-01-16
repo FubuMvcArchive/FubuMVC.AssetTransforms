@@ -64,6 +64,9 @@ end
 desc "Compiles the libraries"
 task :compile => [:restore_if_missing, :clean, :version] do
   MSBuildRunner.compile :compilemode => COMPILE_TARGET, :solutionfile => 'src/FubuMVC.AssetTransforms.sln', :clrversion => CLR_TOOLS_VERSION
+
+  target = COMPILE_TARGET.downcase
+  bottles("create-pak src/FubuMVC.Less build/fubumvc-less.zip -target #{target}")
 end
 
 desc "Runs unit tests"
@@ -80,6 +83,11 @@ zip :package do |zip|
 	zip.directories_to_zip = [props[:stage]]
 	zip.output_file = 'FubuMVC.AssetTransforms.zip'
 	zip.output_path = [props[:artifacts]]
+end
+
+def self.bottles(args)
+  bottles = Platform.runtime(Nuget.tool("Bottles.Tools", "BottleRunner.exe"))
+  sh "#{bottles} #{args}"
 end
 
 # Helpers 
