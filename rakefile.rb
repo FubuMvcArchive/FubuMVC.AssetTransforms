@@ -24,7 +24,7 @@ BUILD_NUMBER = "#{BUILD_VERSION}.#{build_revision}"
 props = { :stage => BUILD_DIR, :artifacts => ARTIFACTS }
 
 desc "**Default**, compiles and runs tests"
-task :default => [:compile, :unit_test]
+task :default => [:compile, :unit_test, :bottle_up]
 
 desc "Target used for the CI server"
 task :ci => [:update_all_dependencies,:default,:history]
@@ -64,14 +64,25 @@ end
 desc "Compiles the libraries"
 task :compile => [:restore_if_missing, :clean, :version] do
   MSBuildRunner.compile :compilemode => COMPILE_TARGET, :solutionfile => 'src/FubuMVC.AssetTransforms.sln', :clrversion => CLR_TOOLS_VERSION
+end
 
+desc "Make bottles"
+task :bottle_up do
+
+  # Coffee ILMerging
   outputDir = "src/FubuMVC.Coffee/bin/#{COMPILE_TARGET}"
   packer = ILRepack.new :out => "#{outputDir}/FubuMVC.Coffee.dll", :lib => outputDir
   packer.merge :lib => outputDir, :refs => ['FubuMVC.Coffee.dll', 'SassAndCoffee.Core.dll', 'SassAndCoffee.JavaScript.dll']
   
+  # Less ILMerging
+  outputDir = "src/FubuMVC.Less/bin/#{COMPILE_TARGET}"
+  packer = ILRepack.new :out => "#{outputDir}/FubuMVC.Less.dll", :lib => outputDir
+  packer.merge :lib => outputDir, :refs => ['FubuMVC.Less.dll', 'dotless.Core.dll']
+
   target = COMPILE_TARGET.downcase
-  bottles("create-pak src/FubuMVC.Less build/fubumvc-less.zip -target #{target}")
+  bottles("create-pak src/FubuMVC.Less build/fubumvc.less.zip -target #{target}")
   bottles("create-pak src/FubuMVC.Coffee build/fubumvc.coffee.zip -target #{target}")
+
 end
 
 desc "Runs unit tests"
@@ -80,7 +91,7 @@ task :test => [:unit_test]
 desc "Runs unit tests"
 task :unit_test => :compile do
   runner = NUnitRunner.new :compilemode => COMPILE_TARGET, :source => 'src', :platform => 'x86'
-  runner.executeTests ['FubuMVC.Coffee.Tests', 'FubuMVC.Less.Tests', 'FubuMVC.Sass.Tests']
+  runner.executeTests ['FubuMVC.Coffee.Tests', 'FubuMVC.Less.Tests', 'FubuMVC.Sass.Tests', 'FubuMVC.Minifier.Tests']
 end
 
 desc "ZIPs up the build results"

@@ -13,10 +13,9 @@
     <tags>fubumvc</tags>
     <dependencies>
       <dependency id="FubuMVC.References" version="0.9.3.712" />
-      <dependency id="dotless" version="1.2.1.0" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\build\fubumvc-less.zip" target="content\fubu-content" />	
+    <file src="..\..\build\fubumvc.less.zip" target="content\fubu-content" />	
   </files>
 </package>

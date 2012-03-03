@@ -4,6 +4,6 @@ namespace FubuMVC.Less
 {
     public class LessTransformerPolicy : CssTransformerPolicy<LessTransformer>
     {
-        public LessTransformerPolicy() : base(ActionType.BatchedTransformation, ".less") { }
+        public LessTransformerPolicy() : base(ActionType.BatchedTransformation, LessExtension.LESS_EXTENSION) { }
     }
 }
