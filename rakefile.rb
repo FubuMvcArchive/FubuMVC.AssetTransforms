@@ -65,8 +65,13 @@ desc "Compiles the libraries"
 task :compile => [:restore_if_missing, :clean, :version] do
   MSBuildRunner.compile :compilemode => COMPILE_TARGET, :solutionfile => 'src/FubuMVC.AssetTransforms.sln', :clrversion => CLR_TOOLS_VERSION
 
+  outputDir = "src/FubuMVC.Coffee/bin/#{COMPILE_TARGET}"
+  packer = ILRepack.new :out => "#{outputDir}/FubuMVC.Coffee.dll", :lib => outputDir
+  packer.merge :lib => outputDir, :refs => ['FubuMVC.Coffee.dll', 'SassAndCoffee.Core.dll', 'SassAndCoffee.JavaScript.dll']
+  
   target = COMPILE_TARGET.downcase
   bottles("create-pak src/FubuMVC.Less build/fubumvc-less.zip -target #{target}")
+  bottles("create-pak src/FubuMVC.Coffee build/fubumvc.coffee.zip -target #{target}")
 end
 
 desc "Runs unit tests"

@@ -8,6 +8,7 @@ namespace FubuMVC.Coffee
     public class CoffeeTransformer : ITransformer
     {
         private readonly ICoffeeCompiler _coffeeCompiler;
+
         public CoffeeTransformer(ICoffeeCompiler coffeeCompiler)
         {
             _coffeeCompiler = coffeeCompiler;
