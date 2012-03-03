@@ -3,13 +3,14 @@ using FubuMVC.Coffee.Compilers;
 using FubuMVC.Core;
 using FubuMVC.Core.Assets.Content;
 using FubuMVC.Core.Registration;
+using FubuMVC.Core.Runtime;
 using FubuTestingSupport;
 using NUnit.Framework;
 
 namespace FubuMVC.Coffee.Tests
 {
     [TestFixture]
-    public class DefaultServicesTester : InteractionContext<CoffeeExtension>
+    public class CoffeeExtensionTester : InteractionContext<CoffeeExtension>
     {
         private IServiceRegistry _services;
 
@@ -21,10 +22,17 @@ namespace FubuMVC.Coffee.Tests
         }
 
         [Test]
+        public void registers_coffee_mime_type()
+        {
+            MimeType.Javascript.HasExtension(CoffeeExtension.COFFEE_EXTENSION).ShouldBeTrue();
+        }
+
+        [Test]
         public void coffee_compiler()
         {
-            _services.DefaultServiceFor<ICoffeeCompiler>().ShouldNotBeNull()
-                .Type.ShouldEqual(typeof(CoffeeSharpCompiler));
+            _services
+                .DefaultServiceFor<ICoffeeCompiler>().ShouldNotBeNull()
+                .Value.GetType().ShouldEqual(typeof(SassCoffeeCompiler));
         }
 
         [Test]
