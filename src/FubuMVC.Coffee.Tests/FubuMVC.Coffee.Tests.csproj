@@ -34,9 +34,6 @@
     <Reference Include="Bottles">
       <HintPath>..\packages\Bottles.0.9.1.191\lib\Bottles.dll</HintPath>
     </Reference>
-    <Reference Include="CoffeeSharp">
-      <HintPath>..\packages\CoffeeSharp.0.3\lib\CoffeeSharp.dll</HintPath>
-    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\packages\FubuCore.0.9.4.112\lib\FubuCore.dll</HintPath>
     </Reference>

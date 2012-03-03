@@ -1,5 +1,4 @@
 ﻿using System.Linq;
-using CoffeeSharp;
 using FubuMVC.Coffee.Compilers;
 using FubuMVC.Core.Assets.Files;
 using FubuTestingSupport;
@@ -20,14 +19,6 @@ namespace FubuMVC.Coffee.Tests
             const string code = "smoke = (x) -> x * x";
             ClassUnderTest.Transform(code, Enumerable.Empty<AssetFile>());
             MockFor<ICoffeeCompiler>().AssertWasCalled(x => x.Compile(code));
-        }
-
-        [Test]
-        [Ignore]
-        public void turtle()
-        {
-            var cse = new CoffeeScriptEngine();
-            Assert.Pass(cse.Compile("smoke = (x) -> x * x"));
         }
 
         [Test]
