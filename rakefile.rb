@@ -80,8 +80,8 @@ task :bottle_up do
   packer.merge :lib => outputDir, :refs => ['FubuMVC.Less.dll', 'dotless.Core.dll']
 
   target = COMPILE_TARGET.downcase
-  bottles("create-pak src/FubuMVC.Less build/fubumvc.less.zip -target #{target}")
-  bottles("create-pak src/FubuMVC.Coffee build/fubumvc.coffee.zip -target #{target}")
+  fubu("create-pak src/FubuMVC.Less build/fubumvc.less.zip -target #{target}")
+  fubu("create-pak src/FubuMVC.Coffee build/fubumvc.coffee.zip -target #{target}")
 
 end
 
@@ -101,9 +101,9 @@ zip :package do |zip|
 	zip.output_path = [props[:artifacts]]
 end
 
-def self.bottles(args)
-  bottles = Platform.runtime(Nuget.tool("Bottles.Tools", "BottleRunner.exe"))
-  sh "#{bottles} #{args}"
+def self.fubu(args)
+  fubu = Platform.runtime(Nuget.tool("FubuMVC.References", "Fubu.exe"))
+  sh "#{fubu} #{args}"
 end
 
 # Helpers 
