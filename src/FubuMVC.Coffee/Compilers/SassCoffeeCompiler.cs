@@ -5,6 +5,7 @@ namespace FubuMVC.Coffee.Compilers
     public class SassCoffeeCompiler : ICoffeeCompiler
     {
         private readonly CoffeeScriptCompiler _coffeeScriptCompiler;
+        private static readonly object Lock = new object();
 
         public SassCoffeeCompiler(CoffeeScriptCompiler coffeeScriptCompiler)
         {
@@ -13,7 +14,10 @@ namespace FubuMVC.Coffee.Compilers
 
         public string Compile(string code)
         {
-            return _coffeeScriptCompiler.Compile(code);
+            lock (Lock)
+            {
+                return _coffeeScriptCompiler.Compile(code);
+            }
         }
     }
 }

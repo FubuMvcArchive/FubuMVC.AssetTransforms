@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using FubuMVC.Coffee.Compilers;
+using FubuMVC.Core;
 using FubuMVC.Core.Assets.Files;
+using FubuMVC.StructureMap;
 using FubuTestingSupport;
 using NUnit.Framework;
 using Rhino.Mocks;
@@ -27,6 +29,31 @@ namespace FubuMVC.Coffee.Tests
         {
             var compiler = new CoffeeScriptCompiler(new InstanceProvider<IJavaScriptRuntime>(() => new IEJavaScriptRuntime()));
             Assert.Pass(compiler.Compile("smoke = (x) -> x * x"));
+        }
+    }
+
+    [TestFixture]
+    public class CoffeeScriptCompilerIntegratedTester
+    {
+        [Test]
+        public void compiles_the_script()
+        {
+            var compiler = FubuApplication
+                .For<TestCoffeeScriptRegistry>()
+                .StructureMapObjectFactory()
+                .Bootstrap()
+                .Facility
+                .Get<ICoffeeCompiler>();
+
+            Assert.Pass(compiler.Compile("smoke = (x) -> x * x"));
+        }
+
+        public class TestCoffeeScriptRegistry : FubuRegistry
+        {
+            public TestCoffeeScriptRegistry()
+            {
+                Import<CoffeeExtension>();
+            }
         }
     }
 }

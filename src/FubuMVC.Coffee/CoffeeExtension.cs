@@ -1,7 +1,9 @@
-﻿using FubuMVC.Coffee.Compilers;
+﻿using System;
+using FubuMVC.Coffee.Compilers;
 using FubuMVC.Core;
 using FubuMVC.Core.Assets.Content;
 using FubuMVC.Core.Registration;
+using FubuMVC.Core.Registration.ObjectGraph;
 using FubuMVC.Core.Runtime;
 using SassAndCoffee.Core;
 using SassAndCoffee.JavaScript;
@@ -21,15 +23,22 @@ namespace FubuMVC.Coffee
             MimeType.Javascript.AddExtension(COFFEE_EXTENSION);
         }
 
-        private static void registerDefaultServices(IServiceRegistry s)
+        private static void registerDefaultServices(IServiceRegistry registry)
         {
-            s.SetServiceIfNone<ICoffeeCompiler>(buildCompiler());
-            s.AddService<ITransformerPolicy, CoffeeTransformerPolicy>();
+            registerCompiler(registry);
+            registry.AddService<ITransformerPolicy, CoffeeTransformerPolicy>();
         }
 
-        private static ICoffeeCompiler buildCompiler()
+        private static void registerCompiler(IServiceRegistry registry)
         {
-            return new SassCoffeeCompiler(new CoffeeScriptCompiler(new InstanceProvider<IJavaScriptRuntime>(() => new IEJavaScriptRuntime())));
+            var compilerDef = registry.SetServiceIfNone(typeof (ICoffeeCompiler), typeof (SassCoffeeCompiler));
+            var innerCompilerDef = ObjectDef.ForType<CoffeeScriptCompiler>();
+            
+            var instanceProvider = ObjectDef.ForType<InstanceProvider<IJavaScriptRuntime>>();
+            Func<IJavaScriptRuntime> runtimeFunc = () => new IEJavaScriptRuntime();
+            instanceProvider.DependencyByValue(typeof(Func<IJavaScriptRuntime>), runtimeFunc);
+            innerCompilerDef.Dependency(typeof(IInstanceProvider<IJavaScriptRuntime>), instanceProvider);
+            compilerDef.Dependency(typeof(CoffeeScriptCompiler), innerCompilerDef);
         }
     }
 }

@@ -31,8 +31,8 @@ namespace FubuMVC.Coffee.Tests
         public void coffee_compiler()
         {
             _services
-                .DefaultServiceFor<ICoffeeCompiler>().ShouldNotBeNull()
-                .Value.GetType().ShouldEqual(typeof(SassCoffeeCompiler));
+                .DefaultServiceFor<ICoffeeCompiler>()
+                .ShouldNotBeNull();
         }
 
         [Test]
