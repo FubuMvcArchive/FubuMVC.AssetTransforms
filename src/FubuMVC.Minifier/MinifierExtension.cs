@@ -11,10 +11,12 @@ namespace FubuMVC.Minifier
             var minifierPolicy = JavascriptTransformerPolicy<MinifierTransformer>
                 .For(ActionType.Transformation, MimeType.Javascript.DefaultExtension());
 
+            minifierPolicy.AddExclusionCriteria(file => file.Name.Contains(".min."));
+
             registry.Services(s =>
             {
                 s.AddService<ITransformerPolicy>(minifierPolicy);
-                s.SetServiceIfNone<IMinifier>(new UglifyMinifier());
+                s.SetServiceIfNone<IMinifier, UglifyMinifier>();
             });
         }
     }
