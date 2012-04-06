@@ -12,10 +12,10 @@
     <description>CoffeeScript support for FubuMVC.</description>
     <tags>fubumvc</tags>
     <dependencies>
-      <dependency id="FubuMVC.References" version="0.9.5.804" />
+      <dependency id="FubuMVC.References" version="0.9.5.805" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\build\fubumvc.coffee.zip" target="content\fubu-content" />
+    <file src="..\..\src\FubuMVC.Coffee\bin\release\FubuMVC.Coffee.dll" target="lib/net40" />
   </files>
 </package>
