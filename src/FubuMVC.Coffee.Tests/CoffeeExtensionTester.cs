@@ -12,7 +12,7 @@ namespace FubuMVC.Coffee.Tests
     [TestFixture]
     public class CoffeeExtensionTester : InteractionContext<CoffeeExtension>
     {
-        private IServiceRegistry _services;
+        private ServiceGraph _services;
 
         protected override void beforeEach()
         {

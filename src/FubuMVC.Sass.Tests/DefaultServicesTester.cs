@@ -10,7 +10,7 @@ namespace FubuMVC.Sass.Tests
     [TestFixture]
     public class DefaultServicesTester : InteractionContext<SassExtension>
     {
-        private IServiceRegistry _services;
+        private ServiceGraph _services;
 
         protected override void beforeEach()
         {

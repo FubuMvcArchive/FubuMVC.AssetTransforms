@@ -11,7 +11,7 @@ namespace FubuMVC.Less.Tests
     [TestFixture]
     public class DefaultServicesTester : InteractionContext<LessExtension>
     {
-        private IServiceRegistry _services;
+        private ServiceGraph _services;
 
         protected override void beforeEach()
         {
