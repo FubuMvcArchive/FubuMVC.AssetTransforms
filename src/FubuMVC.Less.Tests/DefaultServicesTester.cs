@@ -5,6 +5,7 @@ using FubuMVC.Core.Registration;
 using FubuTestingSupport;
 using NUnit.Framework;
 using dotless.Core;
+using dotless.Core.Input;
 
 namespace FubuMVC.Less.Tests
 {
@@ -23,8 +24,8 @@ namespace FubuMVC.Less.Tests
         [Test]
         public void less_engine()
         {
-            _services.DefaultServiceFor<ILessEngine>()
-                .Value.ShouldBeOfType<LessEngine>();
+            _services.DefaultServiceFor<ILessEngine>().ShouldNotBeNull()
+				.Type.ShouldEqual(typeof(LessEngine));
         }
 
         [Test]
@@ -40,5 +41,13 @@ namespace FubuMVC.Less.Tests
             _services.ServicesFor<ITransformerPolicy>()
                 .ShouldContain(x => x.Type.CanBeCastTo<LessTransformerPolicy>());
         }
+
+		[Test]
+		public void less_path_resolver() 
+		{
+			_services.DefaultServiceFor<IPathResolver>().ShouldNotBeNull()
+				.Type.ShouldEqual(typeof(AssetPathResolver));
+		}
+
     }
 }
