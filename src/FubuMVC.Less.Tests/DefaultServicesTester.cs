@@ -27,6 +27,13 @@ namespace FubuMVC.Less.Tests
                 .Value.ShouldBeOfType<LessEngine>();
         }
 
+		[Test]
+		public void engine_should_use_exception_logger() {
+			_services.DefaultServiceFor<ILessEngine>()
+				.Value.As<LessEngine>().Logger
+				.ShouldBeOfType<ExceptionLogger>();
+		}
+
         [Test]
         public void less_compiler()
         {

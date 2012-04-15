@@ -18,7 +18,7 @@ namespace FubuMVC.Less
 
         private static void registerDefaultServices(IServiceRegistry s)
         {
-            s.SetServiceIfNone<ILessEngine>(new LessEngine());
+            s.SetServiceIfNone<ILessEngine>(new LessEngine(){Logger = new ExceptionLogger()});
             s.SetServiceIfNone<ILessCompiler, LessCompiler>();
             s.AddService<ITransformerPolicy, LessTransformerPolicy>();
         }

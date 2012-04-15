@@ -67,10 +67,12 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="ExceptionLogger.cs" />
     <Compile Include="LessCompiler.cs" />
     <Compile Include="LessExtension.cs" />
     <Compile Include="LessTransformer.cs" />
     <Compile Include="LessTransformerPolicy.cs" />
+    <Compile Include="ParserException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include=".package-manifest" />
