@@ -80,8 +80,8 @@ task :bottle_up do
   packer.merge :lib => outputDir, :refs => ['FubuMVC.Less.dll', 'dotless.Core.dll']
 
   target = COMPILE_TARGET.downcase
-  fubu("create-pak src/FubuMVC.Less build/fubumvc.less.zip -target #{target}")
-  fubu("create-pak src/FubuMVC.Coffee build/fubumvc.coffee.zip -target #{target}")
+  fubu("create-pak src/FubuMVC.Less build/fubumvc.less.zip --target #{target}")
+  fubu("create-pak src/FubuMVC.Coffee build/fubumvc.coffee.zip --target #{target}")
 
 end
 
