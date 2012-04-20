@@ -50,7 +50,8 @@ packaging/release
 *.swp
 output
 output/*
-
 src/packages
 repositories.config
 results
+bottles.cmd
+fubu.cmd
