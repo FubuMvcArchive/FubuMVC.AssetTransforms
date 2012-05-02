@@ -57,6 +57,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,10 +69,12 @@
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="ExceptionLogger.cs" />
+    <Compile Include="AssetPathResolver.cs" />
     <Compile Include="LessCompiler.cs" />
     <Compile Include="LessExtension.cs" />
     <Compile Include="LessTransformer.cs" />
     <Compile Include="LessTransformerPolicy.cs" />
+    <Compile Include="OptimizedParser.cs" />
     <Compile Include="ParserException.cs" />
   </ItemGroup>
   <ItemGroup>
