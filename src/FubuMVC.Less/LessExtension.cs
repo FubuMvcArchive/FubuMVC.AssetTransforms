@@ -26,9 +26,9 @@ namespace FubuMVC.Less
 			s.SetServiceIfNone<ILogger, ExceptionLogger>();
 			s.SetServiceIfNone<Parser, OptimizedParser>();
 			s.SetServiceIfNone<IStylizer, PlainStylizer>();
-			s.SetServiceIfNone<IImporter, Importer>();
+			s.SetServiceIfNone<IImporter, DefaultImporter>();
 			s.SetServiceIfNone<IFileReader, FileReader>();
-			s.SetServiceIfNone<ILessEngine, LessEngine>();
+			s.SetServiceIfNone<ILessEngine, DefaultEngine>();
 			s.SetServiceIfNone<IPathResolver, AssetPathResolver>();
             s.SetServiceIfNone<ILessCompiler, LessCompiler>();
             s.AddService<ITransformerPolicy, LessTransformerPolicy>();

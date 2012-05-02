@@ -68,6 +68,7 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="DefaultEngine.cs" />
     <Compile Include="DefaultImporter.cs" />
     <Compile Include="ExceptionLogger.cs" />
     <Compile Include="AssetPathResolver.cs" />
