@@ -6,6 +6,7 @@ using FubuTestingSupport;
 using NUnit.Framework;
 using dotless.Core;
 using dotless.Core.Input;
+using dotless.Core.Loggers;
 
 namespace FubuMVC.Less.Tests
 {
@@ -29,10 +30,10 @@ namespace FubuMVC.Less.Tests
         }
 
 		[Test]
-		public void engine_should_use_exception_logger() {
-			_services.DefaultServiceFor<ILessEngine>()
-				.Value.As<LessEngine>().Logger
-				.ShouldBeOfType<ExceptionLogger>();
+		public void engine_should_use_exception_logger() 
+		{
+			_services.DefaultServiceFor<ILogger>().ShouldNotBeNull()
+				.Type.ShouldEqual(typeof(ExceptionLogger));
 		}
 
         [Test]
