@@ -22,5 +22,19 @@ namespace FubuMVC.Less.Tests {
 
 			ClassUnderTest.GetFullPath(name).ShouldEqual(path);
 		}
+
+		[Test]
+		public void should_look_in_current_folder() 
+		{
+			const string path = "lib";
+			const string name = "imported";
+			var expectedAssetName = path + @"/" + name;
+
+			ClassUnderTest.CurrentFolder = path;
+
+			ClassUnderTest.GetFullPath(name);
+
+			MockFor<IAssetPipeline>().AssertWasCalled(pipeline => pipeline.Find(expectedAssetName));
+		}
 	}
 }
