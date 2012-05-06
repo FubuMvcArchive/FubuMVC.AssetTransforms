@@ -18,7 +18,7 @@ namespace FubuMVC.Coffee.Tests
         {
             var registry = new FubuRegistry();
             ClassUnderTest.As<IFubuRegistryExtension>().Configure(registry);
-            _services = registry.BuildLightGraph().Services;
+            _services = registry.BuildGraph().Services;
         }
 
         [Test]
