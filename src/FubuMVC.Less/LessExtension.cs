@@ -3,6 +3,11 @@ using FubuMVC.Core.Assets.Content;
 using FubuMVC.Core.Registration;
 using FubuMVC.Core.Runtime;
 using dotless.Core;
+using dotless.Core.Importers;
+using dotless.Core.Input;
+using dotless.Core.Loggers;
+using dotless.Core.Parser;
+using dotless.Core.Stylizers;
 
 namespace FubuMVC.Less
 {
@@ -18,8 +23,14 @@ namespace FubuMVC.Less
 
         private static void registerDefaultServices(IServiceRegistry s)
         {
-            s.SetServiceIfNone<ILessEngine>(new LessEngine(){Logger = new ExceptionLogger()});
-            s.SetServiceIfNone<ILessCompiler, LessCompiler>();
+			s.SetServiceIfNone<ILogger, ExceptionLogger>();
+			s.SetServiceIfNone<Parser, OptimizedParser>();
+			s.SetServiceIfNone<IStylizer, PlainStylizer>();
+			s.SetServiceIfNone<IImporter, DefaultImporter>();
+			s.SetServiceIfNone<IFileReader, FileReader>();
+			s.SetServiceIfNone<ILessEngine, DefaultEngine>();
+			s.SetServiceIfNone<IPathResolver, AssetPathResolver>();
+			s.SetServiceIfNone<ILessCompiler, LessCompiler>();
             s.AddService<ITransformerPolicy, LessTransformerPolicy>();
         }
     }

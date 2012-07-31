@@ -5,6 +5,8 @@ using FubuMVC.Core.Registration;
 using FubuTestingSupport;
 using NUnit.Framework;
 using dotless.Core;
+using dotless.Core.Input;
+using dotless.Core.Loggers;
 
 namespace FubuMVC.Less.Tests
 {
@@ -24,20 +26,23 @@ namespace FubuMVC.Less.Tests
         public void less_engine()
         {
             _services.DefaultServiceFor<ILessEngine>()
-                .Value.ShouldBeOfType<LessEngine>();
+				.ShouldNotBeNull()
+				.Type.ShouldEqual(typeof(DefaultEngine));
         }
 
 		[Test]
-		public void engine_should_use_exception_logger() {
-			_services.DefaultServiceFor<ILessEngine>()
-				.Value.As<LessEngine>().Logger
-				.ShouldBeOfType<ExceptionLogger>();
+		public void engine_should_use_exception_logger() 
+		{
+			_services.DefaultServiceFor<ILogger>()
+				.ShouldNotBeNull()
+				.Type.ShouldEqual(typeof(ExceptionLogger));
 		}
 
         [Test]
         public void less_compiler()
         {
-            _services.DefaultServiceFor<ILessCompiler>().ShouldNotBeNull()
+            _services.DefaultServiceFor<ILessCompiler>()
+				.ShouldNotBeNull()
                 .Type.ShouldEqual(typeof(LessCompiler));
         }
 
@@ -47,5 +52,13 @@ namespace FubuMVC.Less.Tests
             _services.ServicesFor<ITransformerPolicy>()
                 .ShouldContain(x => x.Type.CanBeCastTo<LessTransformerPolicy>());
         }
+
+
+		[Test]
+		public void less_path_resolver() 
+		{
+			_services.DefaultServiceFor<IPathResolver>().ShouldNotBeNull()
+				.Type.ShouldEqual(typeof(AssetPathResolver));
+		}
     }
 }
