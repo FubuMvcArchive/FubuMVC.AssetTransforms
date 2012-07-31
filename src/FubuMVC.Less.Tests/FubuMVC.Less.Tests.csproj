@@ -85,6 +85,7 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
+    <Compile Include="AssetPathResolverTester.cs" />
     <Compile Include="DefaultServicesTester.cs" />
     <Compile Include="LessCompilerTester.cs" />
     <Compile Include="LessTransformerPolicyTester.cs" />
