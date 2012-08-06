@@ -9,13 +9,13 @@
     <projectUrl>http://mvc.fubu-project.org/</projectUrl>
     <iconUrl>https://github.com/DarthFubuMVC/fubu-collateral/raw/master/Icons/FubuMvc_256.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Less support for FubuMVC.</description>
+    <description>JavaScript minification for FubuMVC with uglify.js</description>
     <tags>fubumvc</tags>
     <dependencies>
       <dependency id="FubuMVC.References" version="0.9.8.993" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\src\FubuMVC.Less\bin\release\FubuMVC.Less.dll" target="lib/net40" />
+    <file src="..\..\src\FubuMVC.Sass\bin\release\FubuMVC.Sass.dll" target="lib/net40" />
   </files>
 </package>
