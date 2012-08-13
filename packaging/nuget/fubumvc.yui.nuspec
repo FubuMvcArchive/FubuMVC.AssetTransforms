@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>FubuMVC.YuiCompression</id>
+    <version>0.0.0</version>
+    <authors>Jeremy D. Miller, et al.</authors>
+    <owners>Alex Henning Johannessen, Josh Arnold, Jeremy D. Miller</owners>
+    <licenseUrl>https://github.com/DarthFubuMVC/fubumvc/raw/master/license.txt</licenseUrl>
+    <projectUrl>http://mvc.fubu-project.org/</projectUrl>
+    <iconUrl>https://github.com/DarthFubuMVC/fubu-collateral/raw/master/Icons/FubuMvc_256.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>YUICompressor.Net support for FubuMVC.</description>
+    <tags>fubumvc</tags>
+    <dependencies>
+      <dependency id="FubuMVC.References" version="0.9.8.993" />
+      <dependency id="FubuMVC.YuiCompression" version="2.0.0.0"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\src\FubuMVC.YuiCompression\bin\release\FubuMVC.YuiCompression.dll" target="lib/net40" />
+  </files>
+</package>

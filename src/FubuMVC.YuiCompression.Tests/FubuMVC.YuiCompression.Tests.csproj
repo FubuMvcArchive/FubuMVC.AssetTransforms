@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B2988F03-5BAF-421C-93C0-A52FCAA0140C}</ProjectGuid>
+    <ProjectGuid>{62E45C31-B876-4B85-A321-27A3012FCD2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FubuMVC.Sass.Tests</RootNamespace>
-    <AssemblyName>FubuMVC.Sass.Tests</AssemblyName>
+    <RootNamespace>FubuMVC.YuiCompression.Tests</RootNamespace>
+    <AssemblyName>FubuMVC.YuiCompression.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,8 +34,14 @@
     <Reference Include="Bottles">
       <HintPath>..\packages\Bottles.0.9.1.334\lib\Bottles.dll</HintPath>
     </Reference>
+    <Reference Include="EcmaScript.NET, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\EcmaScript.NET.dll</HintPath>
+    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\packages\FubuCore.0.9.9.174\lib\FubuCore.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuKayak">
+      <HintPath>..\packages\FubuKayak.0.9.8.1094\lib\net40\FubuKayak.dll</HintPath>
     </Reference>
     <Reference Include="FubuLocalization">
       <HintPath>..\packages\FubuLocalization.0.9.5.72\lib\FubuLocalization.dll</HintPath>
@@ -43,32 +49,32 @@
     <Reference Include="FubuMVC.Core">
       <HintPath>..\packages\FubuMVC.References.0.9.8.1094\lib\net40\FubuMVC.Core.dll</HintPath>
     </Reference>
+    <Reference Include="FubuMVC.OwinHost">
+      <HintPath>..\packages\FubuKayak.0.9.8.1094\lib\net40\FubuMVC.OwinHost.dll</HintPath>
+    </Reference>
     <Reference Include="FubuMVC.StructureMap">
       <HintPath>..\packages\FubuMVC.References.0.9.8.1094\lib\net40\FubuMVC.StructureMap.dll</HintPath>
     </Reference>
-    <Reference Include="FubuTestingSupport">
+    <Reference Include="FubuMVC.TestingHarness">
+      <HintPath>..\packages\FubuMVC.TestingHarness.0.9.8.1094\lib\net40\FubuMVC.TestingHarness.dll</HintPath>
+    </Reference>
+    <Reference Include="FubuTestingSupport, Version=0.9.9.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FubuTestingSupport.0.9.9.174\lib\FubuTestingSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Gate">
+      <HintPath>..\packages\Gate.0.1.4\lib\Gate.dll</HintPath>
+    </Reference>
+    <Reference Include="Gate.Kayak">
+      <HintPath>..\packages\Gate.Kayak.0.1.4\lib\Gate.Kayak.dll</HintPath>
     </Reference>
     <Reference Include="HtmlTags">
       <HintPath>..\packages\HtmlTags.1.1.0.96\lib\4.0\HtmlTags.dll</HintPath>
     </Reference>
-    <Reference Include="IronRuby">
-      <HintPath>..\packages\IronRuby.1.1.3\Lib\IronRuby.dll</HintPath>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Iesi.Collections.dll</HintPath>
     </Reference>
-    <Reference Include="IronRuby.Libraries">
-      <HintPath>..\packages\IronRuby.1.1.3\Lib\IronRuby.Libraries.dll</HintPath>
-    </Reference>
-    <Reference Include="IronRuby.Libraries.Yaml">
-      <HintPath>..\packages\IronRuby.1.1.3\Lib\IronRuby.Libraries.Yaml.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Dynamic">
-      <HintPath>..\packages\IronRuby.1.1.3\Lib\Microsoft.Dynamic.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Scripting">
-      <HintPath>..\packages\IronRuby.1.1.3\Lib\Microsoft.Scripting.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Scripting.Metadata">
-      <HintPath>..\packages\IronRuby.1.1.3\Lib\Microsoft.Scripting.Metadata.dll</HintPath>
+    <Reference Include="Kayak">
+      <HintPath>..\packages\Kayak.0.7.2\lib\Kayak.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
@@ -81,12 +87,6 @@
     </Reference>
     <Reference Include="Rhino.Mocks">
       <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
-    </Reference>
-    <Reference Include="SassAndCoffee.Core">
-      <HintPath>..\packages\SassAndCoffee.Core.2.0.2.0\lib\net40-Client\SassAndCoffee.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="SassAndCoffee.Ruby">
-      <HintPath>..\packages\SassAndCoffee.Ruby.2.0.2.0\lib\net40-Client\SassAndCoffee.Ruby.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
@@ -101,26 +101,29 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Yahoo.Yui.Compressor, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\CommonAssemblyInfo.cs">
-      <Link>Properties\CommonAssemblyInfo.cs</Link>
-    </Compile>
-    <Compile Include="DefaultSassCompilerTester.cs" />
-    <Compile Include="DefaultServicesTester.cs" />
-    <Compile Include="SassTransformerPolicyTester.cs" />
-    <Compile Include="SassTransformerTester.cs" />
+    <Compile Include="default_services_are_registered.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmokeTester.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FubuMVC.Sass\FubuMVC.Sass.csproj">
-      <Project>{02AAF024-C03B-4E15-9F1B-5B844732B718}</Project>
-      <Name>FubuMVC.Sass</Name>
+    <ProjectReference Include="..\FubuMVC.YuiCompression\FubuMVC.YuiCompression.csproj">
+      <Project>{1DB8C919-AF27-4119-9335-70536C9D94F3}</Project>
+      <Name>FubuMVC.YuiCompression</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\scripts\slick.core.js" />
+    <Content Include="content\styles\slick.grid.css" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

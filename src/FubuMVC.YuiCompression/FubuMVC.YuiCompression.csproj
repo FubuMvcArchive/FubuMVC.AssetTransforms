@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{13189964-4213-48B6-9697-473BF1B73CBD}</ProjectGuid>
+    <ProjectGuid>{1DB8C919-AF27-4119-9335-70536C9D94F3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FubuMVC.Less</RootNamespace>
-    <AssemblyName>FubuMVC.Less</AssemblyName>
+    <RootNamespace>FubuMVC.YuiCompression</RootNamespace>
+    <AssemblyName>FubuMVC.YuiCompression</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,8 +34,8 @@
     <Reference Include="Bottles">
       <HintPath>..\packages\Bottles.0.9.1.334\lib\Bottles.dll</HintPath>
     </Reference>
-    <Reference Include="dotless.Core">
-      <HintPath>..\packages\dotless.1.3.0.0\lib\dotless.Core.dll</HintPath>
+    <Reference Include="EcmaScript.NET">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\EcmaScript.NET.dll</HintPath>
     </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\packages\FubuCore.0.9.9.174\lib\FubuCore.dll</HintPath>
@@ -52,6 +52,9 @@
     <Reference Include="HtmlTags">
       <HintPath>..\packages\HtmlTags.1.1.0.96\lib\4.0\HtmlTags.dll</HintPath>
     </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Iesi.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="StructureMap">
       <HintPath>..\packages\structuremap.2.6.3\lib\StructureMap.dll</HintPath>
     </Reference>
@@ -62,25 +65,20 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="Yahoo.Yui.Compressor">
+      <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Yahoo.Yui.Compressor.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\CommonAssemblyInfo.cs">
-      <Link>Properties\CommonAssemblyInfo.cs</Link>
+      <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AssemblyInfo.cs" />
-    <Compile Include="AssetPathResolver.cs" />
-    <Compile Include="DefaultEngine.cs" />
-    <Compile Include="DefaultImporter.cs" />
-    <Compile Include="ExceptionLogger.cs" />
-    <Compile Include="LessCompiler.cs" />
-    <Compile Include="LessExtension.cs" />
-    <Compile Include="LessTransformer.cs" />
-    <Compile Include="LessTransformerPolicy.cs" />
-    <Compile Include="OptimizedParser.cs" />
-    <Compile Include="ParserException.cs" />
+    <Compile Include="YuiCompressionExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="YuiCssCompressor.cs" />
+    <Compile Include="YuiJavascriptCompressor.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".package-manifest" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
