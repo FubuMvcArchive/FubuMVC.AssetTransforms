@@ -14,7 +14,7 @@ namespace FubuMVC.YuiCompression
             cssPolicy.AddExclusionCriteria(file => file.Name.Contains(".min."));
 
             var jsPolicy = JavascriptTransformerPolicy<YuiJavascriptCompressor>
-                .For(ActionType.Transformation);
+                .For(ActionType.Global);
 
             jsPolicy.AddMatchingCriteria(file => file.MimeType == MimeType.Javascript);
             jsPolicy.AddExclusionCriteria(file => file.Name.Contains(".min."));
