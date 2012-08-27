@@ -32,34 +32,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bottles">
-      <HintPath>..\packages\Bottles.0.9.1.334\lib\Bottles.dll</HintPath>
+      <HintPath>..\packages\Bottles.0.9.1.340\lib\Bottles.dll</HintPath>
     </Reference>
     <Reference Include="EcmaScript.NET, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\EcmaScript.NET.dll</HintPath>
     </Reference>
     <Reference Include="FubuCore">
-      <HintPath>..\packages\FubuCore.0.9.9.174\lib\FubuCore.dll</HintPath>
+      <HintPath>..\packages\FubuCore.0.9.9.176\lib\FubuCore.dll</HintPath>
     </Reference>
     <Reference Include="FubuKayak">
       <HintPath>..\packages\FubuKayak.0.9.8.1094\lib\net40\FubuKayak.dll</HintPath>
     </Reference>
     <Reference Include="FubuLocalization">
-      <HintPath>..\packages\FubuLocalization.0.9.5.72\lib\FubuLocalization.dll</HintPath>
+      <HintPath>..\packages\FubuLocalization.0.9.5.74\lib\FubuLocalization.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.Core">
-      <HintPath>..\packages\FubuMVC.References.0.9.8.1094\lib\net40\FubuMVC.Core.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.References.0.9.8.1114\lib\net40\FubuMVC.Core.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.OwinHost">
       <HintPath>..\packages\FubuKayak.0.9.8.1094\lib\net40\FubuMVC.OwinHost.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.StructureMap">
-      <HintPath>..\packages\FubuMVC.References.0.9.8.1094\lib\net40\FubuMVC.StructureMap.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.References.0.9.8.1114\lib\net40\FubuMVC.StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.TestingHarness">
       <HintPath>..\packages\FubuMVC.TestingHarness.0.9.8.1094\lib\net40\FubuMVC.TestingHarness.dll</HintPath>
     </Reference>
-    <Reference Include="FubuTestingSupport, Version=0.9.9.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FubuTestingSupport.0.9.9.174\lib\FubuTestingSupport.dll</HintPath>
+    <Reference Include="FubuTestingSupport">
+      <HintPath>..\packages\FubuTestingSupport.0.9.9.176\lib\FubuTestingSupport.dll</HintPath>
     </Reference>
     <Reference Include="Gate">
       <HintPath>..\packages\Gate.0.1.4\lib\Gate.dll</HintPath>
@@ -68,7 +68,7 @@
       <HintPath>..\packages\Gate.Kayak.0.1.4\lib\Gate.Kayak.dll</HintPath>
     </Reference>
     <Reference Include="HtmlTags">
-      <HintPath>..\packages\HtmlTags.1.1.0.96\lib\4.0\HtmlTags.dll</HintPath>
+      <HintPath>..\packages\HtmlTags.1.1.0.99\lib\4.0\HtmlTags.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\YUICompressor.NET.2.0.0.0\lib\NET20\Iesi.Collections.dll</HintPath>
