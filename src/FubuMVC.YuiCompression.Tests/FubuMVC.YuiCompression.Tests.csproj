@@ -41,7 +41,7 @@
       <HintPath>..\packages\FubuCore.0.9.9.176\lib\FubuCore.dll</HintPath>
     </Reference>
     <Reference Include="FubuKayak">
-      <HintPath>..\packages\FubuKayak.0.9.8.1094\lib\net40\FubuKayak.dll</HintPath>
+      <HintPath>..\packages\FubuKayak.0.9.8.1114\lib\net40\FubuKayak.dll</HintPath>
     </Reference>
     <Reference Include="FubuLocalization">
       <HintPath>..\packages\FubuLocalization.0.9.5.74\lib\FubuLocalization.dll</HintPath>
@@ -50,7 +50,7 @@
       <HintPath>..\packages\FubuMVC.References.0.9.8.1114\lib\net40\FubuMVC.Core.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.OwinHost">
-      <HintPath>..\packages\FubuKayak.0.9.8.1094\lib\net40\FubuMVC.OwinHost.dll</HintPath>
+      <HintPath>..\packages\FubuKayak.0.9.8.1114\lib\net40\FubuMVC.OwinHost.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.StructureMap">
       <HintPath>..\packages\FubuMVC.References.0.9.8.1114\lib\net40\FubuMVC.StructureMap.dll</HintPath>
