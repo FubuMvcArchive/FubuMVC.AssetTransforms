@@ -56,7 +56,7 @@
       <HintPath>..\packages\FubuMVC.References.0.9.8.1114\lib\net40\FubuMVC.StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="FubuMVC.TestingHarness">
-      <HintPath>..\packages\FubuMVC.TestingHarness.0.9.8.1094\lib\net40\FubuMVC.TestingHarness.dll</HintPath>
+      <HintPath>..\packages\FubuMVC.TestingHarness.0.9.8.1114\lib\net40\FubuMVC.TestingHarness.dll</HintPath>
     </Reference>
     <Reference Include="FubuTestingSupport">
       <HintPath>..\packages\FubuTestingSupport.0.9.9.176\lib\FubuTestingSupport.dll</HintPath>
