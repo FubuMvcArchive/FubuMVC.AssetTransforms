@@ -46,9 +46,6 @@
     <Reference Include="FubuMVC.Core, Version=0.9.8.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FubuMVC.Core.0.9.8.1191\lib\net40\FubuMVC.Core.dll</HintPath>
     </Reference>
-    <Reference Include="FubuMVC.StructureMap">
-      <HintPath>..\packages\FubuMVC.References.0.9.8.1142\lib\net40\FubuMVC.StructureMap.dll</HintPath>
-    </Reference>
     <Reference Include="FubuTestingSupport">
       <HintPath>..\packages\FubuTestingSupport.0.9.9.181\lib\FubuTestingSupport.dll</HintPath>
     </Reference>
