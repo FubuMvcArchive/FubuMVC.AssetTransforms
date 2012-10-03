@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <id>FubuMVC.Less</id>
+    <id>FubuMVC.Minifier</id>
     <version>0.0.0</version>
     <authors>Alex Henning Johannessen, et al.</authors>
     <owners>Alex Henning Johannessen, Josh Arnold, Jeremy D. Miller</owners>
@@ -12,10 +12,10 @@
     <description>JavaScript minification for FubuMVC with uglify.js</description>
     <tags>fubumvc</tags>
     <dependencies>
-      <dependency id="FubuMVC.References" version="0.9.8.993" />
+      <dependency id="FubuMVC.Core" version="0.9.8.1191" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\..\src\FubuMVC.Sass\bin\release\FubuMVC.Sass.dll" target="lib/net40" />
+    <file src="..\..\src\FubuMVC.Minifier\bin\release\FubuMVC.Minifier.dll" target="lib/net40" />
   </files>
 </package>
