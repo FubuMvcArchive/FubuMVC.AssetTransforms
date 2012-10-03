@@ -11,13 +11,13 @@ namespace HelloWorld
     {
         public ConfigureFubuMVC()
         {
-            IncludeDiagnostics(true);
-
             Applies
                 .ToThisAssembly();
 
             Actions
                 .IncludeClassesSuffixedWithController();
+
+            Import<SparkEngine>();
 
             Routes
                 .HomeIs<HomeIn>()
@@ -31,7 +31,6 @@ namespace HelloWorld
 
             Assets.CombineAllUniqueAssetRequests();
 
-            this.UseSpark();
             Views.TryToAttachWithDefaultConventions();
         }
     }
