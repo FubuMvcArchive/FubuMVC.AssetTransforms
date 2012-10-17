@@ -12,7 +12,7 @@
     <description>CoffeeScript support for FubuMVC.</description>
     <tags>fubumvc</tags>
     <dependencies>
-      <dependency id="FubuMVC.References" version="0.9.8.993" />
+      <dependency id="FubuMVC.Core.Assets" version="0.9.9.15" />
     </dependencies>
   </metadata>
   <files>

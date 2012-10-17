@@ -6,8 +6,8 @@ using FubuCore;
 namespace FubuMVC.Less {
 	public class AssetPathResolver : IPathResolver 
 	{
-		private IAssetPipeline _assetPipeline;
-		public AssetPathResolver(IAssetPipeline assetPipeline) 
+		private IAssetFileGraph _assetPipeline;
+        public AssetPathResolver(IAssetFileGraph assetPipeline) 
 		{
 			_assetPipeline = assetPipeline;
 		}

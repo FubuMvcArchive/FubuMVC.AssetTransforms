@@ -12,7 +12,7 @@
     <description>Less support for FubuMVC.</description>
     <tags>fubumvc</tags>
     <dependencies>
-      <dependency id="FubuMVC.Core" version="0.9.8.1191" />
+      <dependency id="FubuMVC.Core.Assets" version="0.9.9.15" />
     </dependencies>
   </metadata>
   <files>

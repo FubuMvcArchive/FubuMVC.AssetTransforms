@@ -16,7 +16,7 @@ namespace FubuMVC.Less.Tests {
 		{
 			const string path = @"C:\full\path";
 			const string name = "imported";
-			MockFor<IAssetPipeline>()
+			MockFor<IAssetFileGraph>()
 				.Stub(pipeline => pipeline.Find(name))
 				.Return(new AssetFile(name) {FullPath = path});
 
@@ -34,7 +34,7 @@ namespace FubuMVC.Less.Tests {
 
 			ClassUnderTest.GetFullPath(name);
 
-			MockFor<IAssetPipeline>().AssertWasCalled(pipeline => pipeline.Find(expectedAssetName));
+            MockFor<IAssetFileGraph>().AssertWasCalled(pipeline => pipeline.Find(expectedAssetName));
 		}
 	}
 }

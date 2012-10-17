@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using System.IO;
+using FubuMVC.Core.Assets;
 using FubuMVC.Core.Assets.Files;
 using FubuMVC.TestingHarness;
 using NUnit.Framework;
