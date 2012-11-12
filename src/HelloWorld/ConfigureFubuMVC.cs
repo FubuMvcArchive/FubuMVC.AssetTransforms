@@ -12,9 +12,6 @@ namespace HelloWorld
     {
         public ConfigureFubuMVC()
         {
-            Applies
-                .ToThisAssembly();
-
             Actions
                 .IncludeClassesSuffixedWithController();
 

@@ -23,13 +23,13 @@ namespace FubuMVC.Coffee
             MimeType.Javascript.AddExtension(COFFEE_EXTENSION);
         }
 
-        private static void registerDefaultServices(IServiceRegistry registry)
+        private static void registerDefaultServices(ServiceRegistry registry)
         {
             registerCompiler(registry);
             registry.AddService<ITransformerPolicy, CoffeeTransformerPolicy>();
         }
 
-        private static void registerCompiler(IServiceRegistry registry)
+        private static void registerCompiler(ServiceRegistry registry)
         {
             var compilerDef = registry.SetServiceIfNone(typeof (ICoffeeCompiler), typeof (SassCoffeeCompiler));
             var innerCompilerDef = ObjectDef.ForType<CoffeeScriptCompiler>();
@@ -41,4 +41,5 @@ namespace FubuMVC.Coffee
             compilerDef.Dependency(typeof(CoffeeScriptCompiler), innerCompilerDef);
         }
     }
+
 }

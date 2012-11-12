@@ -8,14 +8,18 @@ namespace FubuMVC.Sass
     {
         public void Configure(FubuRegistry registry)
         {
-            registry.Services(services);
+            registry.Services<SassServices>();
         }
 
-        private static void services(IServiceRegistry s)
+    }
+
+    public class SassServices : ServiceRegistry
+    {
+        public SassServices()
         {
-            s.SetServiceIfNone<ISassCompiler, DefaultSassCompiler>();
-            s.SetServiceIfNone<SassAndCoffee.Ruby.Sass.ISassCompiler, SassAndCoffee.Ruby.Sass.SassCompiler>();
-            s.AddService<ITransformerPolicy, SassTransformerPolicy>();            
+            SetServiceIfNone<ISassCompiler, DefaultSassCompiler>();
+            SetServiceIfNone<SassAndCoffee.Ruby.Sass.ISassCompiler, SassAndCoffee.Ruby.Sass.SassCompiler>();
+            AddService<ITransformerPolicy, SassTransformerPolicy>();     
         }
     }
 }

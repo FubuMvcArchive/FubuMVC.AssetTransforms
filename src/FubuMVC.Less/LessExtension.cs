@@ -17,21 +17,25 @@ namespace FubuMVC.Less
 
         public void Configure(FubuRegistry registry)
         {
-            registry.Services(registerDefaultServices);
+            registry.Services<LessServices>();
             MimeType.Css.AddExtension(LESS_EXTENSION);
         }
 
-        private static void registerDefaultServices(IServiceRegistry s)
+    }
+
+    public class LessServices : ServiceRegistry
+    {
+        public LessServices()
         {
-			s.SetServiceIfNone<ILogger, ExceptionLogger>();
-			s.SetServiceIfNone<Parser, OptimizedParser>();
-			s.SetServiceIfNone<IStylizer, PlainStylizer>();
-			s.SetServiceIfNone<IImporter, DefaultImporter>();
-			s.SetServiceIfNone<IFileReader, FileReader>();
-			s.SetServiceIfNone<ILessEngine, DefaultEngine>();
-			s.SetServiceIfNone<IPathResolver, AssetPathResolver>();
-			s.SetServiceIfNone<ILessCompiler, LessCompiler>();
-            s.AddService<ITransformerPolicy, LessTransformerPolicy>();
+            SetServiceIfNone<ILogger, ExceptionLogger>();
+            SetServiceIfNone<Parser, OptimizedParser>();
+            SetServiceIfNone<IStylizer, PlainStylizer>();
+            SetServiceIfNone<IImporter, DefaultImporter>();
+            SetServiceIfNone<IFileReader, FileReader>();
+            SetServiceIfNone<ILessEngine, DefaultEngine>();
+            SetServiceIfNone<IPathResolver, AssetPathResolver>();
+            SetServiceIfNone<ILessCompiler, LessCompiler>();
+            AddService<ITransformerPolicy, LessTransformerPolicy>();
         }
     }
 }
