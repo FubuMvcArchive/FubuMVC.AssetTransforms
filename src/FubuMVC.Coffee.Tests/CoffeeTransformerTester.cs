@@ -42,7 +42,7 @@ namespace FubuMVC.Coffee.Tests
                 .For<TestCoffeeScriptRegistry>()
                 .StructureMapObjectFactory()
                 .Bootstrap()
-                .Facility
+                .Factory
                 .Get<ICoffeeCompiler>();
 
             Assert.Pass(compiler.Compile("smoke = (x) -> x * x"));
