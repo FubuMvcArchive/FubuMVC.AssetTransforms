@@ -88,7 +88,7 @@ task :bottle_up do
   packer = ILRepack.new :out => "#{outputDir}/FubuMVC.Less.dll", :lib => outputDir
   packer.merge :lib => outputDir, :refs => ['FubuMVC.Less.dll', 'dotless.Core.dll']
 
-  target = COMPILE_TARGET.downcase
+  target = COMPILE_TARGET
 end
 
 desc "Runs unit tests"
