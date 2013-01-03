@@ -81,7 +81,7 @@ task :bottle_up do
   # Coffee ILMerging
   outputDir = "src/FubuMVC.Coffee/bin/#{COMPILE_TARGET}"
   packer = ILRepack.new :out => "#{outputDir}/FubuMVC.Coffee.dll", :lib => outputDir
-  packer.merge :lib => outputDir, :refs => ['FubuMVC.Coffee.dll', 'AjaxMin.dll', 'Cassette.dll', 'Cassette.CoffeeScript.dll']
+  packer.merge :lib => outputDir, :refs => ['FubuMVC.Coffee.dll', 'SassAndCoffee.Core.dll', 'SassAndCoffee.JavaScript.dll']
   
   # Less ILMerging
   outputDir = "src/FubuMVC.Less/bin/#{COMPILE_TARGET}"
