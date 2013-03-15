@@ -11,6 +11,6 @@ namespace FubuMVC.Less {
 	/// Making the container happy
 	/// </summary>
 	public class DefaultEngine : LessEngine {
-		public DefaultEngine(Parser parser, ILogger logger) : base(parser, logger, false) {}
+		public DefaultEngine(Parser parser, ILogger logger) : base(parser, logger, false, false) {}
 	}
 }
