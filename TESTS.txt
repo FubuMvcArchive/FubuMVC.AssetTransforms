@@ -1,0 +1,5 @@
+FubuMVC.Coffee.Tests
+FubuMVC.Less.Tests
+FubuMVC.Sass.Tests
+FubuMVC.Minifier.Tests
+FubuMVC.YuiCompression.Tests
