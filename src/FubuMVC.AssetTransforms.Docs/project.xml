@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<ProjectRoot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <TagLine>A member of the Fubu family of projects</TagLine>
+  <Name>FubuMVC.AssetTransforms</Name>
+  <GitHubPage>http://github.com/DarthFubuMVC/FubuMVC.AssetTransforms</GitHubPage>
+  <UserGroupUrl>https://groups.google.com/forum/?fromgroups#!forum/fubumvc-devel</UserGroupUrl>
+  <BuildServerUrl>http://build.fubu-project.org/project.html?projectId=[CHANGEME]&amp;tab=projectOverview</BuildServerUrl>
+  <BottleName>FubuMVC.AssetTransforms.Docs</BottleName>
+  <Nugets>
+    <PublishedNuget>
+      <Name>FubuMVC.Coffee</Name>
+      <Description>CoffeeScript support for FubuMVC.</Description>
+    </PublishedNuget>
+    <PublishedNuget>
+      <Name>FubuMVC.Less</Name>
+      <Description>Less support for FubuMVC.</Description>
+    </PublishedNuget>
+    <PublishedNuget>
+      <Name>FubuMVC.Minifier</Name>
+      <Description>JavaScript minification for FubuMVC with uglify.js</Description>
+    </PublishedNuget>
+    <PublishedNuget>
+      <Name>FubuMVC.Sass</Name>
+      <Description>Sass support for FubuMVC.</Description>
+    </PublishedNuget>
+    <PublishedNuget>
+      <Name>FubuMVC.YuiCompression</Name>
+      <Description>YUICompressor.Net support for FubuMVC.</Description>
+    </PublishedNuget>
+  </Nugets>
+  <Url>fubumvc.assettransforms</Url>
+</ProjectRoot>

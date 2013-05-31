@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.YuiCompression", "F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.YuiCompression.Tests", "FubuMVC.YuiCompression.Tests\FubuMVC.YuiCompression.Tests.csproj", "{62E45C31-B876-4B85-A321-27A3012FCD2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.AssetTransforms.Docs", "FubuMVC.AssetTransforms.Docs\FubuMVC.AssetTransforms.Docs.csproj", "{68EF282C-EE11-4337-9097-B53E8A5AC81B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{62E45C31-B876-4B85-A321-27A3012FCD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62E45C31-B876-4B85-A321-27A3012FCD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{62E45C31-B876-4B85-A321-27A3012FCD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EF282C-EE11-4337-9097-B53E8A5AC81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EF282C-EE11-4337-9097-B53E8A5AC81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EF282C-EE11-4337-9097-B53E8A5AC81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EF282C-EE11-4337-9097-B53E8A5AC81B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
