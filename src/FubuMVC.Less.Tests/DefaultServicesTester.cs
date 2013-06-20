@@ -1,12 +1,11 @@
+using dotless.Core;
+using dotless.Core.Loggers;
 using FubuCore;
 using FubuMVC.Core;
 using FubuMVC.Core.Assets.Content;
 using FubuMVC.Core.Registration;
 using FubuTestingSupport;
 using NUnit.Framework;
-using dotless.Core;
-using dotless.Core.Input;
-using dotless.Core.Loggers;
 
 namespace FubuMVC.Less.Tests
 {
@@ -53,12 +52,25 @@ namespace FubuMVC.Less.Tests
                 .ShouldContain(x => x.Type.CanBeCastTo<LessTransformerPolicy>());
         }
 
-
 		[Test]
 		public void less_path_resolver() 
 		{
 			_services.DefaultServiceFor<IPathResolver>().ShouldNotBeNull()
 				.Type.ShouldEqual(typeof(AssetPathResolver));
 		}
+
+	    [Test]
+	    public void default_filereader()
+	    {
+		    _services.DefaultServiceFor<IFileReader>().ShouldNotBeNull()
+			    .Type.ShouldEqual(typeof (DefaultFileReader));
+	    }
+
+	    [Test]
+	    public void less_filereader_shim()
+	    {
+		    _services.DefaultServiceFor<dotless.Core.Input.IFileReader>().ShouldNotBeNull()
+			    .Type.ShouldEqual(typeof (DotLessFileReaderShim));
+	    }
     }
 }
