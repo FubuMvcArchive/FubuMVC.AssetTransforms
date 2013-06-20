@@ -76,8 +76,12 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="AssetPathResolver.cs" />
     <Compile Include="DefaultEngine.cs" />
+    <Compile Include="DefaultFileReader.cs" />
     <Compile Include="DefaultImporter.cs" />
+    <Compile Include="DotLessFileReaderShim.cs" />
     <Compile Include="ExceptionLogger.cs" />
+    <Compile Include="IFileReader.cs" />
+    <Compile Include="IPathResolver.cs" />
     <Compile Include="LessCompiler.cs" />
     <Compile Include="LessExtension.cs" />
     <Compile Include="LessTransformer.cs" />

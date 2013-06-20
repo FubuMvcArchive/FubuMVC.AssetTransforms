@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using dotless.Core.Importers;
-using dotless.Core.Input;
-
-namespace FubuMVC.Less {
+﻿namespace FubuMVC.Less
+{
 	/// <summary>
 	/// Making the container happy
 	/// </summary>
-	public class DefaultImporter : Importer {
-		public DefaultImporter(IFileReader fileReader) : base(fileReader) {}
+	public class DefaultImporter : dotless.Core.Importers.Importer {
+		public DefaultImporter(dotless.Core.Input.IFileReader fileReader) : base(fileReader) { }
 	}
 }
