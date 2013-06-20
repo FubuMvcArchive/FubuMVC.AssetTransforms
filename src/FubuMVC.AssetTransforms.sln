@@ -1,6 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B29850C-4133-4A93-9B04-54D113FE4F52}"
+	ProjectSection(SolutionItems) = preProject
+		..\rakefile.rb = ..\rakefile.rb
+	EndProjectSection
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Sass", "FubuMVC.Sass\FubuMVC.Sass.csproj", "{02AAF024-C03B-4E15-9F1B-5B844732B718}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Coffee.Tests", "FubuMVC.Coffee.Tests\FubuMVC.Coffee.Tests.csproj", "{0AC1702A-C204-49C4-9C9D-570BCF10824B}"
@@ -18,11 +23,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld", "HelloWorld\HelloWorld.csproj", "{A53E5818-0EC2-463B-B560-2B76396108EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.Minifier.Tests", "FubuMVC.Minifier.Tests\FubuMVC.Minifier.Tests.csproj", "{6A10548B-C22F-4245-B1C3-9AD9FD0C5139}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B29850C-4133-4A93-9B04-54D113FE4F52}"
-	ProjectSection(SolutionItems) = preProject
-		..\rakefile.rb = ..\rakefile.rb
-	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FubuMVC.YuiCompression", "FubuMVC.YuiCompression\FubuMVC.YuiCompression.csproj", "{1DB8C919-AF27-4119-9335-70536C9D94F3}"
 EndProject
