@@ -14,7 +14,6 @@ namespace FubuMVC.Less
             registry.Services<LessServices>();
             MimeType.Css.AddExtension(LESS_EXTENSION);
         }
-
     }
 
     public class LessServices : ServiceRegistry
@@ -28,7 +27,7 @@ namespace FubuMVC.Less
             SetServiceIfNone<dotless.Core.ILessEngine, DefaultEngine>();
             SetServiceIfNone<dotless.Core.Input.IFileReader, DotLessFileReaderShim>();
 
-            SetServiceIfNone<IFileReader, DefaultFileReader>();
+            SetServiceIfNone<IFileReader, LessFileTransformerFileReader>();
             SetServiceIfNone<IPathResolver, AssetPathResolver>();
             SetServiceIfNone<ILessCompiler, LessCompiler>();
             AddService<ITransformerPolicy, LessTransformerPolicy>();
