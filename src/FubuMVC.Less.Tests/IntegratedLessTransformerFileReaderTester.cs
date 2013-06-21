@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Text;
 using FubuCore;
 using FubuTestingSupport;
@@ -59,6 +62,13 @@ namespace FubuMVC.Less.Tests
 			theFileReader
 				.GetFileContents(BaseFileName)
 				.ShouldEqual("{0}\r\n{1}\r\n\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
+		}
+
+		[Test]
+		public void handles_no_transformers()
+		{
+			theFileReader = createFileReader(Enumerable.Empty<IFileTransformer>());
+			theFileReader.GetFileContents(BaseFileName).ShouldEqual(BaseContents);
 		}
 
 		[Test]
