@@ -11,11 +11,12 @@ namespace FubuMVC.Less.Tests
 	{
 		private const string BaseContents = "@import \"variables.less\"";
 		private const string SecondContents = "@brandAccent: #fff;";
+		private const string BaseFileName = "base.less";
 		private LessFileTransformerFileReader theFileReader;
 
 		protected override void configure(FileScenarioDefinition scenario)
 		{
-			scenario.Asset("base.less", BaseContents);
+			scenario.Asset(BaseFileName, BaseContents);
 		}
 
 		[Test]
@@ -27,7 +28,7 @@ namespace FubuMVC.Less.Tests
 			};
 
 			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), transformers, new FileSystem());
-			var contents = theFileReader.GetFileContents("base.less");
+			var contents = theFileReader.GetFileContents(BaseFileName);
 			contents.ShouldEqual("{0}\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
 		}
 
@@ -40,7 +41,7 @@ namespace FubuMVC.Less.Tests
 			};
 
 			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), transformers, new FileSystem());
-			var contents = theFileReader.GetFileContents("base.less");
+			var contents = theFileReader.GetFileContents(BaseFileName);
 			contents.ShouldEqual(BaseContents);
 		}
 
@@ -54,7 +55,7 @@ namespace FubuMVC.Less.Tests
 			};
 
 			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), transformers, new FileSystem());
-			var contents = theFileReader.GetFileContents("base.less");
+			var contents = theFileReader.GetFileContents(BaseFileName);
 			contents.ShouldEqual("{0}\r\n{1}\r\n\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
 		}
 
@@ -62,14 +63,14 @@ namespace FubuMVC.Less.Tests
 		public void file_exists()
 		{
 			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), null, new FileSystem());
-			theFileReader.DoesFileExist("base.less").ShouldBeTrue();
+			theFileReader.DoesFileExist(BaseFileName).ShouldBeTrue();
 		}
 
 		[Test]
 		public void retrieves_binary_content()
 		{
 			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), null, new FileSystem());
-			theFileReader.GetBinaryFileContents("base.less").ShouldEqual(Encoding.UTF8.GetBytes(BaseContents));
+			theFileReader.GetBinaryFileContents(BaseFileName).ShouldEqual(Encoding.UTF8.GetBytes(BaseContents));
 		}
 	}
 
