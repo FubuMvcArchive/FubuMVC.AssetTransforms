@@ -29,8 +29,9 @@ namespace FubuMVC.Less.Tests
 			};
 
 			theFileReader = createFileReader(transformers);
-			var contents = theFileReader.GetFileContents(BaseFileName);
-			contents.ShouldEqual("{0}\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
+			theFileReader
+				.GetFileContents(BaseFileName)
+				.ShouldEqual("{0}\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
 		}
 
 		[Test]
@@ -42,8 +43,7 @@ namespace FubuMVC.Less.Tests
 			};
 
 			theFileReader = createFileReader(transformers);
-			var contents = theFileReader.GetFileContents(BaseFileName);
-			contents.ShouldEqual(BaseContents);
+			theFileReader.GetFileContents(BaseFileName).ShouldEqual(BaseContents);
 		}
 
 		[Test]
@@ -56,8 +56,9 @@ namespace FubuMVC.Less.Tests
 			};
 
 			theFileReader = createFileReader(transformers);
-			var contents = theFileReader.GetFileContents(BaseFileName);
-			contents.ShouldEqual("{0}\r\n{1}\r\n\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
+			theFileReader
+				.GetFileContents(BaseFileName)
+				.ShouldEqual("{0}\r\n{1}\r\n\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
 		}
 
 		[Test]
