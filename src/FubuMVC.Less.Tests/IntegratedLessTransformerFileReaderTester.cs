@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using FubuCore;
 using FubuTestingSupport;
@@ -9,9 +10,9 @@ namespace FubuMVC.Less.Tests
 	[TestFixture]
 	public class IntegratedLessTransformerFileReaderTester : FileScenarioContext
 	{
+		private const string BaseFileName = "base.less";
 		private const string BaseContents = "@import \"variables.less\"";
 		private const string SecondContents = "@brandAccent: #fff;";
-		private const string BaseFileName = "base.less";
 		private LessFileTransformerFileReader theFileReader;
 
 		protected override void configure(FileScenarioDefinition scenario)
@@ -27,7 +28,7 @@ namespace FubuMVC.Less.Tests
 				new AppendToTransformer {ContentToAppend = SecondContents}
 			};
 
-			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), transformers, new FileSystem());
+			theFileReader = createFileReader(transformers);
 			var contents = theFileReader.GetFileContents(BaseFileName);
 			contents.ShouldEqual("{0}\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
 		}
@@ -40,7 +41,7 @@ namespace FubuMVC.Less.Tests
 				new NonMatchingTransformer()
 			};
 
-			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), transformers, new FileSystem());
+			theFileReader = createFileReader(transformers);
 			var contents = theFileReader.GetFileContents(BaseFileName);
 			contents.ShouldEqual(BaseContents);
 		}
@@ -54,7 +55,7 @@ namespace FubuMVC.Less.Tests
 				new AppendToTransformer {ContentToAppend = SecondContents}
 			};
 
-			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), transformers, new FileSystem());
+			theFileReader = createFileReader(transformers);
 			var contents = theFileReader.GetFileContents(BaseFileName);
 			contents.ShouldEqual("{0}\r\n{1}\r\n\r\n{1}\r\n".ToFormat(BaseContents, SecondContents));
 		}
@@ -62,15 +63,20 @@ namespace FubuMVC.Less.Tests
 		[Test]
 		public void file_exists()
 		{
-			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), null, new FileSystem());
+			theFileReader = createFileReader();
 			theFileReader.DoesFileExist(BaseFileName).ShouldBeTrue();
 		}
 
 		[Test]
 		public void retrieves_binary_content()
 		{
-			theFileReader = new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), null, new FileSystem());
+			theFileReader = createFileReader();
 			theFileReader.GetBinaryFileContents(BaseFileName).ShouldEqual(Encoding.UTF8.GetBytes(BaseContents));
+		}
+
+		private LessFileTransformerFileReader createFileReader(IEnumerable<IFileTransformer> transformers = null)
+		{
+			return new LessFileTransformerFileReader(new StubPathResolver(theScenario.Directory), transformers, new FileSystem());
 		}
 	}
 
