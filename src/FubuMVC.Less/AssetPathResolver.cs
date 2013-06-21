@@ -1,13 +1,12 @@
-using System.Web;
-using FubuMVC.Core.Assets.Files;
-using dotless.Core.Input;
 using FubuCore;
+using FubuMVC.Core.Assets.Files;
 
 namespace FubuMVC.Less {
 	public class AssetPathResolver : IPathResolver 
 	{
-		private IAssetFileGraph _assetPipeline;
-        public AssetPathResolver(IAssetFileGraph assetPipeline) 
+		private readonly IAssetFileGraph _assetPipeline;
+
+		public AssetPathResolver(IAssetFileGraph assetPipeline)
 		{
 			_assetPipeline = assetPipeline;
 		}

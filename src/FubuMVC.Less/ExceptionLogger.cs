@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using dotless.Core.Loggers;
+﻿using dotless.Core.Loggers;
 
 namespace FubuMVC.Less {
 	public class ExceptionLogger : Logger {

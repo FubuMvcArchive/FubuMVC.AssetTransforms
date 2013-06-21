@@ -2,12 +2,6 @@
 using FubuMVC.Core.Assets.Content;
 using FubuMVC.Core.Registration;
 using FubuMVC.Core.Runtime;
-using dotless.Core;
-using dotless.Core.Importers;
-using dotless.Core.Input;
-using dotless.Core.Loggers;
-using dotless.Core.Parser;
-using dotless.Core.Stylizers;
 
 namespace FubuMVC.Less
 {
@@ -20,19 +14,20 @@ namespace FubuMVC.Less
             registry.Services<LessServices>();
             MimeType.Css.AddExtension(LESS_EXTENSION);
         }
-
     }
 
     public class LessServices : ServiceRegistry
     {
         public LessServices()
         {
-            SetServiceIfNone<ILogger, ExceptionLogger>();
-            SetServiceIfNone<Parser, OptimizedParser>();
-            SetServiceIfNone<IStylizer, PlainStylizer>();
-            SetServiceIfNone<IImporter, DefaultImporter>();
-            SetServiceIfNone<IFileReader, FileReader>();
-            SetServiceIfNone<ILessEngine, DefaultEngine>();
+            SetServiceIfNone<dotless.Core.Loggers.ILogger, ExceptionLogger>();
+            SetServiceIfNone<dotless.Core.Parser.Parser, OptimizedParser>();
+            SetServiceIfNone<dotless.Core.Stylizers.IStylizer, dotless.Core.Stylizers.PlainStylizer>();
+            SetServiceIfNone<dotless.Core.Importers.IImporter, DefaultImporter>();
+            SetServiceIfNone<dotless.Core.ILessEngine, DefaultEngine>();
+            SetServiceIfNone<dotless.Core.Input.IFileReader, DotLessFileReaderShim>();
+
+            SetServiceIfNone<IFileReader, LessFileTransformerFileReader>();
             SetServiceIfNone<IPathResolver, AssetPathResolver>();
             SetServiceIfNone<ILessCompiler, LessCompiler>();
             AddService<ITransformerPolicy, LessTransformerPolicy>();
